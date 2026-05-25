@@ -1,0 +1,110 @@
+# Default values for vault-unseal.
+
+deployment:
+  # -- Deployment annotations
+  annotations: {}
+  # -- Deployment labels
+  labels: {}
+  # -- Deployment replica count
+  replicaCount: 1
+  # -- Deployment revision history limit
+  revisionHistoryLimit: 1
+  strategy:
+    # -- Deployment strategy type
+    type: RollingUpdate
+
+image:
+  # -- Image registry
+  registry: ghcr.io
+  # -- Image repository
+  repository: lrstanley/vault-unseal
+  # -- Image pull policy
+  pullPolicy: IfNotPresent
+  # -- Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+# -- Image pull secrets
+imagePullSecrets: []
+# -- Name override
+nameOverride: ""
+# -- Full name override
+fullnameOverride: ""
+
+config:
+  # -- If you want to manage the configuration out of the helm chart, specify the name of the secret
+  existingSecret: ""
+  # -- Config secret annotations
+  annotations: {}
+  # -- Config secret stringData
+  stringData: |
+    environment: dev
+    check_interval: 15s
+    max_check_interval: 30m
+    vault_nodes:
+      - https://1.2.3.4:8200
+    unseal_tokens:
+      - your-token
+      - your-second-token
+    tls_skip_verify: false
+    notify:
+      max_elapsed: 10m
+      queue_delay: 60s
+      # https://shoutrrr.nickfedor.com/v0.14.3/services/overview/
+      urls:
+        - "smtp://username:password@host:port/?fromaddress=fromAddress&toaddresses=recipient1"
+
+containers:
+  # -- Containers environement
+  env: []
+
+serviceAccount:
+  # -- Specifies whether a service account should be created
+  create: false
+  # -- Annotations to add to the service account
+  annotations: {}
+  # -- The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+  # -- Automatically mount the service account token
+  automount: false
+
+# -- Pod annotations
+podAnnotations: {}
+
+# -- Pod security context
+podSecurityContext:
+  fsGroup: 1000
+
+securityContext:
+  # -- Security context capabilities
+  capabilities:
+    drop:
+    - ALL
+  # -- Security context run as non root
+  runAsNonRoot: true
+  readOnlyRootFilesystem: true
+  runAsUser: 1000
+
+# -- Resources
+resources:
+  limits:
+    cpu: 100m
+    memory: 32Mi
+  requests:
+    cpu: 10m
+    memory: 8Mi
+
+# -- Node selector labels
+nodeSelector: {}
+
+# -- Tolerations
+tolerations: []
+
+# -- Affinity
+affinity: {}
+
+# -- Extra volume mounts
+extraVolumeMounts: []
+
+# -- Extra volumes
+extraVolumes: []
