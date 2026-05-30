@@ -1,0 +1,354 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+        "affinity": {
+            "description": "Affinity",
+            "type": "object"
+        },
+        "auth": {
+            "type": "object",
+            "properties": {
+                "bcrypt_cost": {
+                    "type": "integer"
+                },
+                "session_duration_hours": {
+                    "type": "integer"
+                }
+            }
+        },
+        "config": {
+            "type": "object",
+            "properties": {
+                "existingSecret": {
+                    "description": "GoZone secret (if you want to use an existing secret). This secret must contains a key called 'config.yaml'.",
+                    "type": "string"
+                },
+                "gozoneConf": {
+                    "description": "The config.yaml data content.",
+                    "type": "string"
+                }
+            }
+        },
+        "deployment": {
+            "type": "object",
+            "properties": {
+                "annotations": {
+                    "description": "Deployment annotations",
+                    "type": "object"
+                },
+                "labels": {
+                    "description": "Deployment labels",
+                    "type": "object"
+                },
+                "replicas": {
+                    "description": "Deployment replica count",
+                    "type": "integer"
+                },
+                "revisionHistoryLimit": {
+                    "description": "Deployment revision history limit count",
+                    "type": "integer"
+                },
+                "strategy": {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "description": "Deployment strategy type",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "dnsConfig": {
+            "description": "DNS config",
+            "type": "object"
+        },
+        "dnsPolicy": {
+            "description": "DNS policy",
+            "type": "string"
+        },
+        "env": {
+            "description": "Additional environment variables.",
+            "type": "array"
+        },
+        "fullnameOverride": {
+            "description": "This is to override the full chart name.",
+            "type": "string"
+        },
+        "httpRoute": {
+            "description": "Expose the service via gateway-api HTTPRoute Requires Gateway API resources and suitable controller installed within the cluster (see: https://gateway-api.sigs.k8s.io/guides/)",
+            "type": "object",
+            "properties": {
+                "annotations": {
+                    "description": "HTTPRoute annotations.",
+                    "type": "object"
+                },
+                "enabled": {
+                    "description": "HTTPRoute enabled.",
+                    "type": "boolean"
+                },
+                "hostnames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "parentRefs": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "sectionName": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "rules": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "matches": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "path": {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string"
+                                                },
+                                                "value": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "image": {
+            "type": "object",
+            "properties": {
+                "pullPolicy": {
+                    "description": "This sets the pull policy for images.",
+                    "type": "string"
+                },
+                "registry": {
+                    "description": "This sets the repistry",
+                    "type": "string"
+                },
+                "repository": {
+                    "description": "This sets the repository",
+                    "type": "string"
+                },
+                "tag": {
+                    "description": "Overrides the image tag whose default is the chart appVersion.",
+                    "type": "string"
+                }
+            }
+        },
+        "imagePullSecrets": {
+            "description": "This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/",
+            "type": "array"
+        },
+        "ingress": {
+            "type": "object",
+            "properties": {
+                "annotations": {
+                    "description": "Ingress annotations",
+                    "type": "object"
+                },
+                "className": {
+                    "description": "Ingress className",
+                    "type": "string"
+                },
+                "enabled": {
+                    "description": "Ingress enabled",
+                    "type": "boolean"
+                },
+                "hosts": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "host": {
+                                "type": "string"
+                            },
+                            "paths": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "path": {
+                                            "type": "string"
+                                        },
+                                        "pathType": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "tls": {
+                    "type": "array"
+                }
+            }
+        },
+        "livenessProbe": {
+            "description": "This is to setup the liveness probe. More information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/",
+            "type": "object",
+            "properties": {
+                "httpGet": {
+                    "type": "object",
+                    "properties": {
+                        "path": {
+                            "type": "string"
+                        },
+                        "port": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "initialDelaySeconds": {
+                    "type": "integer"
+                },
+                "periodSeconds": {
+                    "type": "integer"
+                }
+            }
+        },
+        "logging": {
+            "type": "object",
+            "properties": {
+                "level": {
+                    "type": "string"
+                }
+            }
+        },
+        "nameOverride": {
+            "description": "This is to override the chart name.",
+            "type": "string"
+        },
+        "nodeSelector": {
+            "description": "This sets the nodeSelector labels",
+            "type": "object"
+        },
+        "podAnnotations": {
+            "description": "This is for setting Kubernetes Annotations to a Pod. For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/",
+            "type": "object"
+        },
+        "podLabels": {
+            "description": "This is for setting Kubernetes Labels to a Pod. For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/",
+            "type": "object"
+        },
+        "podSecurityContext": {
+            "description": "Pod SecurityContext",
+            "type": "object",
+            "properties": {
+                "fsGroup": {
+                    "type": "integer"
+                }
+            }
+        },
+        "readinessProbe": {
+            "description": "This is to setup the readiness probe.",
+            "type": "object",
+            "properties": {
+                "httpGet": {
+                    "type": "object",
+                    "properties": {
+                        "path": {
+                            "type": "string"
+                        },
+                        "port": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "initialDelaySeconds": {
+                    "type": "integer"
+                },
+                "periodSeconds": {
+                    "type": "integer"
+                }
+            }
+        },
+        "resources": {
+            "type": "object"
+        },
+        "securityContext": {
+            "description": "SecurityContext",
+            "type": "object"
+        },
+        "service": {
+            "type": "object",
+            "properties": {
+                "ipFamilies": {
+                    "description": "Service ipFamilies",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ipFamilyPolicy": {
+                    "description": "Service ipFamilyPolicy SingleStack|PreferDualStack|RequireDualStack",
+                    "type": "string"
+                },
+                "port": {
+                    "description": "This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports",
+                    "type": "integer"
+                },
+                "type": {
+                    "description": "This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types",
+                    "type": "string"
+                }
+            }
+        },
+        "serviceAccount": {
+            "type": "object",
+            "properties": {
+                "annotations": {
+                    "description": "Annotations to add to the service account.",
+                    "type": "object"
+                },
+                "automount": {
+                    "description": "Automatically mount a ServiceAccount's API credentials?",
+                    "type": "boolean"
+                },
+                "create": {
+                    "description": "Specifies whether a service account should be created.",
+                    "type": "boolean"
+                },
+                "name": {
+                    "description": "The name of the service account to use. If not set and create is true, a name is generated using the fullname template.",
+                    "type": "string"
+                }
+            }
+        },
+        "tolerations": {
+            "description": "Tolerations",
+            "type": "array"
+        },
+        "volumeMounts": {
+            "description": "Additional volumeMounts on the output Deployment definition.",
+            "type": "array"
+        },
+        "volumes": {
+            "description": "Additional volumes on the output Deployment definition.",
+            "type": "array"
+        }
+    }
+}
