@@ -9,6 +9,10 @@ helm_docs_bin := require("helm-docs")
 _default:
     @just --list
 
+# Run helm lint for chart
+helm-lint chart:
+    {{ helm_bin }} lint --strict ./charts/{{ chart }}
+
 # Generate the README.md for chart
 helm-docs chart:
     {{ helm_docs_bin }} --document-dependency-values --chart-search-root ./charts/{{ chart }}
