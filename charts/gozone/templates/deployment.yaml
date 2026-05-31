@@ -73,7 +73,7 @@ spec:
           volumeMounts:
             {{- if or .Values.config.gozoneConf .Values.config.existingSecret }}
             - name: config-volume
-              mountPath: /app
+              mountPath: /app/config.yaml
               subPath: config.yaml
               readOnly: true
             {{- end }}
