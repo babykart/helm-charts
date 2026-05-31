@@ -71,6 +71,13 @@ config:
   #
   #  logging:
   #    level: "info"
+  #
+  #  admin:
+  #    username: "admin"
+  #    password: "admin"
+  #    email: "admin@gozone.local"
+  #    first_name: "Admin"
+  #    last_name: "User"
 
 # -- DNS config
 dnsConfig: {}
