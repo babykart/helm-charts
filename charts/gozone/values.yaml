@@ -58,19 +58,19 @@ config:
   #
   #  database:
   #    driver: "mysql"
-  #    dsn: "user:password@tcp(localhost:3306)/gozone"
+  #    dsn: "user:password@tcp(mysql.dns.svc.cluster.local:3306)/gozone"
   #
   #  powerdns:
   #    api_url: "http://localhost:8081"
   #    api_key: "changeme"
   #    server_id: "localhost"
-
-auth:
-  session_duration_hours: 24
-  bcrypt_cost: 12
-
-logging:
-  level: "info"
+  #
+  #  auth:
+  #    session_duration_hours: 24
+  #    bcrypt_cost: 12
+  #
+  #  logging:
+  #    level: "info"
 
 # -- DNS config
 dnsConfig: {}

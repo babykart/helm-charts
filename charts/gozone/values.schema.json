@@ -6,17 +6,6 @@
             "description": "Affinity",
             "type": "object"
         },
-        "auth": {
-            "type": "object",
-            "properties": {
-                "bcrypt_cost": {
-                    "type": "integer"
-                },
-                "session_duration_hours": {
-                    "type": "integer"
-                }
-            }
-        },
         "config": {
             "type": "object",
             "properties": {
@@ -227,14 +216,6 @@
                 },
                 "periodSeconds": {
                     "type": "integer"
-                }
-            }
-        },
-        "logging": {
-            "type": "object",
-            "properties": {
-                "level": {
-                    "type": "string"
                 }
             }
         },
