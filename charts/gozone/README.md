@@ -1,6 +1,6 @@
 # gozone
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.2.0](https://img.shields.io/badge/AppVersion-0.2.0-informational?style=flat-square)
+![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.2.0](https://img.shields.io/badge/AppVersion-0.2.0-informational?style=flat-square)
 
 A Helm chart for gozone
 
@@ -52,8 +52,6 @@ helm delete gozone
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` | Affinity |
-| auth.bcrypt_cost | int | `12` |  |
-| auth.session_duration_hours | int | `24` |  |
 | config.existingSecret | string | `""` | GoZone secret (if you want to use an existing secret). This secret must contains a key called 'config.yaml'. |
 | config.gozoneConf | string | `""` | The config.yaml data content. |
 | deployment.annotations | object | `{}` | Deployment annotations |
@@ -81,7 +79,6 @@ helm delete gozone
 | ingress.hosts[0].paths[0].pathType | string | `"ImplementationSpecific"` |  |
 | ingress.tls | list | `[]` |  |
 | livenessProbe | object | `{"httpGet":{"path":"/health/live","port":"http"},"initialDelaySeconds":10,"periodSeconds":30}` | This is to setup the liveness probe. More information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/ |
-| logging.level | string | `"info"` |  |
 | nameOverride | string | `""` | This is to override the chart name. |
 | nodeSelector | object | `{}` | This sets the nodeSelector labels |
 | podAnnotations | object | `{}` | This is for setting Kubernetes Annotations to a Pod. For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/ |
