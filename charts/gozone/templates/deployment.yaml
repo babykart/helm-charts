@@ -87,6 +87,7 @@ spec:
         - name: config-volume
           secret:
             secretName: {{ if .Values.config.existingSecret }}{{ .Values.config.existingSecret }}{{ else }}{{ include "garnet.fullname" . }}-config{{ end }}
+            defaultMode: 0640
         {{- end }}
       {{- with .Values.volumes }}
         {{- toYaml . | nindent 8 }}
