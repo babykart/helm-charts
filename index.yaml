@@ -2,6 +2,28 @@ apiVersion: v1
 entries:
   gozone:
   - apiVersion: v2
+    appVersion: 0.11.0
+    created: "2026-06-20T21:12:56.469687099Z"
+    description: A Helm chart for gozone
+    digest: cd8aa0c56048ed1f3694b4d07fd827b7ec1eb5fd436fbec8241cbf5eda4161cb
+    icon: https://avatars.githubusercontent.com/u/7756566?s=200&v=4
+    keywords:
+    - pdns
+    - admin
+    - api
+    - golang
+    maintainers:
+    - email: babykart@gmail.com
+      name: babykart
+      url: https://github.com/babykart
+    name: gozone
+    sources:
+    - https://github.com/babykart/gozone.git
+    type: application
+    urls:
+    - https://github.com/babykart/helm-charts/releases/download/gozone-0.10.0/gozone-0.10.0.tgz
+    version: 0.10.0
+  - apiVersion: v2
     appVersion: 0.10.1
     created: "2026-06-15T19:42:12.949405686Z"
     description: A Helm chart for gozone
@@ -507,4 +529,4 @@ entries:
     urls:
     - https://github.com/babykart/helm-charts/releases/download/vault-unseal-1.0.4/vault-unseal-1.0.4.tgz
     version: 1.0.4
-generated: "2026-06-15T19:42:12.949542984Z"
+generated: "2026-06-20T21:12:56.469882519Z"
