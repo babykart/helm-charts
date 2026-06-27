@@ -2,8 +2,8 @@ apiVersion: v2
 name: gozone
 description: A Helm chart for gozone
 type: application
-version: 0.11.1
-appVersion: "0.12.1"
+version: 0.11.2
+appVersion: "0.12.2"
 icon: https://avatars.githubusercontent.com/u/7756566?s=200&v=4
 
 keywords:
