@@ -1,0 +1,22 @@
+apiVersion: v2
+name: dmarc-report-viewer
+description: A Helm chart for dmarc-report-viewer
+type: application
+version: 0.1.0
+appVersion: "2.7.2"
+icon: https://avatars.githubusercontent.com/u/2565706?v=4
+
+keywords:
+- dmarc
+- smtp-tls
+- imap
+- reports
+- rust
+
+sources:
+- https://github.com/cry-inc/dmarc-report-viewer
+
+maintainers:
+- name: babykart
+  email: babykart@gmail.com
+  url: https://github.com/babykart
