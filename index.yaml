@@ -1,5 +1,29 @@
 apiVersion: v1
 entries:
+  dmarc-report-viewer:
+  - apiVersion: v2
+    appVersion: 2.7.2
+    created: "2026-11-21T18:49:39.992365169Z"
+    description: A Helm chart for dmarc-report-viewer
+    digest: 658d3c11b535626eb7e10223483a417a1ed4eb98ad8fa9c086fb6f447f1c586c
+    icon: https://avatars.githubusercontent.com/u/2565706?v=4
+    keywords:
+    - dmarc
+    - smtp-tls
+    - imap
+    - reports
+    - rust
+    maintainers:
+    - email: babykart@gmail.com
+      name: babykart
+      url: https://github.com/babykart
+    name: dmarc-report-viewer
+    sources:
+    - https://github.com/cry-inc/dmarc-report-viewer
+    type: application
+    urls:
+    - https://github.com/babykart/helm-charts/releases/download/dmarc-report-viewer-0.1.0/dmarc-report-viewer-0.1.0.tgz
+    version: 0.1.0
   gozone:
   - apiVersion: v2
     appVersion: 1.2.2
@@ -1478,4 +1502,4 @@ entries:
     urls:
     - https://github.com/babykart/helm-charts/releases/download/vault-unseal-1.0.4/vault-unseal-1.0.4.tgz
     version: 1.0.4
-generated: "2026-11-20T22:41:02.889259794Z"
+generated: "2026-11-21T18:49:39.992506679Z"
