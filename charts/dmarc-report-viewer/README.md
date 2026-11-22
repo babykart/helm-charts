@@ -1,6 +1,6 @@
 # dmarc-report-viewer
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.7.2](https://img.shields.io/badge/AppVersion-2.7.2-informational?style=flat-square)
+![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.7.2](https://img.shields.io/badge/AppVersion-2.7.2-informational?style=flat-square)
 
 A Helm chart for dmarc-report-viewer
 
@@ -63,6 +63,8 @@ helm delete dmarc-report-viewer
 | deployment.replicas | int | `1` | Deployment replica count |
 | deployment.revisionHistoryLimit | int | `1` | Deployment revision history limit count |
 | deployment.strategy.type | string | `"RollingUpdate"` | Deployment strategy type |
+| dnsConfig | object | `{}` | DNS config |
+| dnsPolicy | string | `"ClusterFirst"` | DNS policy |
 | env | list | `[]` | Additional environment variables for the application. All the supported variables can be listed with dmarc-report-viewer --help (see https://github.com/cry-inc/dmarc-report-viewer#configuration). The most common ones are IMAP_PORT (993), IMAP_STARTTLS, IMAP_FOLDER (INBOX), IMAP_CHECK_INTERVAL (1800), HTTP_SERVER_PORT (8080), HTTPS_AUTO_CERT and DNS_SERVER. If you change HTTP_SERVER_PORT, also update service.port. |
 | fullnameOverride | string | `""` | This is to override the full chart name. |
 | httpRoute | object | `{"annotations":{},"enabled":false,"hostnames":["chart-example.local"],"parentRefs":[{"name":"gateway","sectionName":"http"}],"rules":[{"matches":[{"path":{"type":"PathPrefix","value":"/"}}]}]}` | Expose the service via gateway-api HTTPRoute Requires Gateway API resources and suitable controller installed within the cluster (see: https://gateway-api.sigs.k8s.io/guides/) |

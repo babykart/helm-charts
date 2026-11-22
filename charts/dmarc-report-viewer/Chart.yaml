@@ -2,7 +2,7 @@ apiVersion: v2
 name: dmarc-report-viewer
 description: A Helm chart for dmarc-report-viewer
 type: application
-version: 0.1.0
+version: 0.2.0
 appVersion: "2.7.2"
 icon: https://avatars.githubusercontent.com/u/2565706?v=4
 
@@ -20,3 +20,8 @@ maintainers:
 - name: babykart
   email: babykart@gmail.com
   url: https://github.com/babykart
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: add dnsConfig & dnsPolicy
