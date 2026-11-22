@@ -1,6 +1,33 @@
 apiVersion: v1
 entries:
   dmarc-report-viewer:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: add dnsConfig & dnsPolicy
+    apiVersion: v2
+    appVersion: 2.7.2
+    created: "2026-11-22T15:54:18.274482629Z"
+    description: A Helm chart for dmarc-report-viewer
+    digest: df58a1c15cb27918724f12fc327ed55dd20c47765e5173ea7b8a8d0d1a1cc07c
+    icon: https://avatars.githubusercontent.com/u/2565706?v=4
+    keywords:
+    - dmarc
+    - smtp-tls
+    - imap
+    - reports
+    - rust
+    maintainers:
+    - email: babykart@gmail.com
+      name: babykart
+      url: https://github.com/babykart
+    name: dmarc-report-viewer
+    sources:
+    - https://github.com/cry-inc/dmarc-report-viewer
+    type: application
+    urls:
+    - https://github.com/babykart/helm-charts/releases/download/dmarc-report-viewer-0.2.0/dmarc-report-viewer-0.2.0.tgz
+    version: 0.2.0
   - apiVersion: v2
     appVersion: 2.7.2
     created: "2026-11-21T18:49:39.992365169Z"
@@ -1502,4 +1529,4 @@ entries:
     urls:
     - https://github.com/babykart/helm-charts/releases/download/vault-unseal-1.0.4/vault-unseal-1.0.4.tgz
     version: 1.0.4
-generated: "2026-11-21T18:49:39.992506679Z"
+generated: "2026-11-22T15:54:18.274694093Z"
