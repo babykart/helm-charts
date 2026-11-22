@@ -60,6 +60,17 @@ config:
   # Use empty string to disable (not recommended).
   httpServerPassword: ""
 
+# -- DNS config
+dnsConfig: {}
+# dnsConfig:
+#   options:
+#   - name: ndots
+#     value: "1"
+#   - name: edns0
+
+# -- DNS policy
+dnsPolicy: ClusterFirst
+
 # -- Additional environment variables for the application.
 # All the supported variables can be listed with
 # dmarc-report-viewer --help (see https://github.com/cry-inc/dmarc-report-viewer#configuration).
@@ -76,6 +87,7 @@ env: []
 # -- This is for setting Kubernetes Annotations to a Pod.
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 podAnnotations: {}
+
 # -- This is for setting Kubernetes Labels to a Pod.
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 podLabels: {}

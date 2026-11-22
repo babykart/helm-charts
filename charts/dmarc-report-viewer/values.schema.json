@@ -65,6 +65,14 @@
                 }
             }
         },
+        "dnsConfig": {
+            "description": "DNS config",
+            "type": "object"
+        },
+        "dnsPolicy": {
+            "description": "DNS policy",
+            "type": "string"
+        },
         "env": {
             "description": "Additional environment variables for the application. All the supported variables can be listed with The most common ones are IMAP_PORT (993), IMAP_STARTTLS, IMAP_FOLDER (INBOX), IMAP_CHECK_INTERVAL (1800), HTTP_SERVER_PORT (8080), HTTPS_AUTO_CERT and DNS_SERVER. If you change HTTP_SERVER_PORT, also update service.port.",
             "type": "array"
